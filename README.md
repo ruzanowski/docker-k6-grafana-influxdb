@@ -19,3 +19,13 @@ The script here is an example of a low Virtual User (VU) load test of the excell
 https://swapi.dev/
 
 If you're tinkering with the script, it is just a friendly open source API, be gentle!
+
+
+#### Common errors
+If you encounter the error below:
+
+``` ERRO[0000] The moduleSpecifier "C:/Program Files/Git/script/load.js" couldn't be found on local disk. Make sure that you've specified the right path to the file. If you're running k6 using the Docker image make sure you have mounted the local directory (-v /local/path/:/inside/docker/path) containing your script and modules so that they're accessible by k6 from inside of the container, see https://grafana.com/docs/k6/latest/using-k6/modules/#using ```
+
+Use the command below *(adding double slash)* to run `load.js`:
+
+    ``` docker compose run k6 run //scripts//load.js ```
